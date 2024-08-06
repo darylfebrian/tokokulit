@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title>Kontak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+<body>
+    
+<header>
+<!-- Logo -->
+    <div class="logo">
+        <img src="foto/logo.png" alt="logo" width="80px" >
+    </div>
+
+<!-- search bar -->
+<div class="search-box">
+    <input type="text" placeholder="Search.......">
+    <div class="search-icon">
+      <i class="fas fa-search"></i>
+    </div>
+<div class="cancel-icon">
+      <i class="fas fa-times"></i>
+    </div>
+<div class="search-data">
+</div>
+</div>
+
+</header>
+<!-- JUDUL -->
+<div class="kontak-isi">
+
+    <div class="kontak-judul">
+      <div class="judul-judul">
+        <div class="judul-1">
+          <p>KONTAK</p>
+        </div>
+        <div class="judul-2">
+          <P>DINA LEATHER</P>
+        </div>
+      </div>
+    </div>
+    <div class="kontak-form-box">
+      <div class="kontak-form">
+          <p>Nama Lengkap</p>
+          <input type="text" placeholder="">
+          <p>Nama Bisnis</p>
+          <input type="text" placeholder="">
+          <p>Nomor Whatsapp</p>
+          <input type="text" placeholder="">
+          <p>Email</p>
+          <input type="text" placeholder="">
+          <p>Subjek</p>
+          <input type="text" placeholder="">
+
+          <form action="#">
+            <button type="Submit">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- menu slide -->
+<div class="menu-slide">
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+  <div class="sidebar">
+    <h3>DINA LEATHER</h3>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i>Beranda</a></li>   
+    <li><a href="tentang.html"><i class="far fa-question-circle"></i>Tentang</a></li> 
+    <li><a href="material.html"><i class="fas fa-layer-group"></i>Material kulit</a></li>
+    <li><a href="blog.html"><i class="fas fa-globe"></i>Blog</a></li>
+    <li><a href="kontak.html"><i class="far fa-envelope"></i>Kontak Kami</a></li>
+  </ul>
+  </div>
+</div>
+
+
+
+<footer>
+  <div class="footer">
+    <div class="col-1">
+        <h3>INFO PELANGGAN</h3>
+        <hr>
+        <a href="index.html">Beranda</a>
+        <a href="blog.html">Blog</a>
+        <a href="material.html">Material</a>
+    </div>
+
+    <div class="col-2">
+    <h3>NEWSLETTER</h3>
+    <hr>
+    <form action="kontak.html">
+        <input type="text" placeholder="Nama Kamu">
+        <input type="text" placeholder="Alamat Email Kamu">
+        <br> 
+        
+        <button type="Submit">SUBCRIBE NOW</button>
+    </form>
+    </div>
+
+    <div class="col-3">
+        <h3>KONTAK KAMI</h3>
+        <hr>
+        <p>DINA Leather Jl. Mataram No 50 Kuta, Badung, Bali, 80361</p>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+    </div>
+</div>
+
+</footer>
+
+
+<script>
+//search bar js//
+    const searchBox = document.querySelector(".search-box");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const searchInput = document.querySelector("input");
+    const searchData = document.querySelector(".search-data");
+    searchBtn.onclick =()=>{
+      searchBox.classList.add("active");
+      searchBtn.classList.add("active");
+      searchInput.classList.add("active");
+      cancelBtn.classList.add("active");
+      searchInput.focus();
+      if(searchInput.value != ""){
+        var values = searchInput.value;
+        searchData.classList.remove("active");
+        searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+      }else{
+        searchData.textContent = "";
+      }
+    }
+    cancelBtn.onclick =()=>{
+      searchBox.classList.remove("active");
+      searchBtn.classList.remove("active");
+      searchInput.classList.remove("active");
+      cancelBtn.classList.remove("active");
+      searchData.classList.toggle("active");
+      searchInput.value = "";
+    }
+  </script>
+</body>
+</html>

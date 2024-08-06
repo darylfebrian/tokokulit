@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title>Material</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+<body>
+    
+<header>
+<!-- Logo -->
+    <div class="logo">
+        <img src="foto/logo.png" alt="logo" width="80px" >
+    </div>
+
+<!-- search bar -->
+<div class="search-box">
+    <input type="text" placeholder="Search.......">
+    <div class="search-icon">
+      <i class="fas fa-search"></i>
+    </div>
+<div class="cancel-icon">
+      <i class="fas fa-times"></i>
+    </div>
+<div class="search-data">
+</div>
+</div>
+
+</header>
+
+<!-- menu slide -->
+<div class="menu-slide">
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+  <div class="sidebar">
+    <h3>DINA LEATHER</h3>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i>Beranda</a></li>   
+    <li><a href="tentang.html"><i class="far fa-question-circle"></i>Tentang</a></li> 
+    <li><a href="material.html"><i class="fas fa-layer-group"></i>Material kulit</a></li>
+    <li><a href="blog.html"><i class="fas fa-globe"></i>Blog</a></li>
+    <li><a href="kontak.html"><i class="far fa-envelope"></i>Kontak Kami</a></li>
+  </ul>
+  </div>
+</div>
+
+<div class="judul-material">
+        <div class="box-material">
+        <div class="material-p1">
+            <p>MATERIAL Kulit</p>
+        </div>
+        <div class="material-p2">
+            <p>Pabrik material kulit berkualitas dengan harga terbaik! <br>Suppulier kulit terbaik untuk furnitur, upholstery & <br>kerajinan. Order sekarang!</p>
+        </div>
+        </div>
+    </div>
+
+
+<div class="isi-material-1">
+    <div class="material-gambar1">
+        <img src="foto/kulit1.png" alt="" width="324px" height="210px">
+    </div>
+    <div class="judul-isi-m-1">
+        <p>FULL GRAIN LEATHER</p>
+    </div>
+    <div class="isi-isi-m-1">
+        <p>Kulit Full Grain adalah kulit kualitas terbaik dimana kulit <br>menampilkan grain atau butiran alami pada permukaannya.</p>
+    </div>
+    <form action="https://bestleather.org/types-of-leather/full-grain/">
+        <button type="Submit">SELENGKAPNYA</button>
+    </form>
+</div>
+
+
+<div class="isi-material-2">
+    <div class="material-gambar1">
+        <img src="foto/kulit2.png" alt="" width="324px" height="210px">
+    </div>
+    <div class="judul-isi-m-2">
+        <p>Crazy horse leather</p>
+    </div>
+    <div class="isi-isi-m-2">
+        <p>Kulit yang diproses dengan cara mengaplikasikan lilin khusus pada kulit full grain yang sudah dihaluskan. Pengaplikasian lilin pada kulit akan menambah keindahan serat kulit sehingga jika terjadi goresan makan warna naturalnya berubah menjadi lebih terang.</p>
+    </div>
+    <form action="https://edcharly.com/blogs/news/what-is-crazy-horse-leather">
+        <button type="Submit">SELENGKAPNYA</button>
+    </form>
+</div>
+
+
+
+<footer>
+  <div class="footer">
+    <div class="col-1">
+        <h3>INFO PELANGGAN</h3>
+        <hr>
+        <a href="index.html">Beranda</a>
+        <a href="blog.html">Blog</a>
+        <a href="material.html">Material</a>
+    </div>
+
+    <div class="col-2">
+    <h3>NEWSLETTER</h3>
+    <hr>
+    <form action="kontak.html">
+        <input type="text" placeholder="Nama Kamu">
+        <input type="text" placeholder="Alamat Email Kamu">
+        <br> 
+        <button type="Submit">SUBCRIBE NOW</button>
+    </form>
+    </div>
+
+    <div class="col-3">
+        <h3>KONTAK KAMI</h3>
+        <hr>
+        <p>DINA Leather Jl. Mataram No 50 Kuta, Badung, Bali, 80361</p>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+    </div>
+</div>
+
+</footer>
+
+
+<script>
+//search bar js//
+    const searchBox = document.querySelector(".search-box");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const searchInput = document.querySelector("input");
+    const searchData = document.querySelector(".search-data");
+    searchBtn.onclick =()=>{
+      searchBox.classList.add("active");
+      searchBtn.classList.add("active");
+      searchInput.classList.add("active");
+      cancelBtn.classList.add("active");
+      searchInput.focus();
+      if(searchInput.value != ""){
+        var values = searchInput.value;
+        searchData.classList.remove("active");
+        searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+      }else{
+        searchData.textContent = "";
+      }
+    }
+    cancelBtn.onclick =()=>{
+      searchBox.classList.remove("active");
+      searchBtn.classList.remove("active");
+      searchInput.classList.remove("active");
+      cancelBtn.classList.remove("active");
+      searchData.classList.toggle("active");
+      searchInput.value = "";
+    }
+  </script>
+</body>
+</html>
